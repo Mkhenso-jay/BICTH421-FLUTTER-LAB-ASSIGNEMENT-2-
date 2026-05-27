@@ -1,108 +1,70 @@
 # Side Hustle Finder (Flutter App)
 
 ## Overview
-This project is a Flutter mobile application developed for:
+Side Hustle Finder is a Flutter mobile application developed for:
 
 - BICTH421 – Advanced Programming Techniques (Mobile Development)
 - Assignment 2 & Assignment 3
 
-The application demonstrates Flutter UI development, Material 3 design, reusable widgets, navigation, state management, persistence, and interactive mobile application features.
-
-The app was developed using Flutter and Dart and follows modern mobile development practices with a clean and responsive user interface.
+The application demonstrates modern Flutter development practices including Material 3 design, reusable widgets, navigation, state management, and persistent local storage.
 
 ---
 
-# Aim of the Assignments
+# Objectives
 
-The purpose of these assignments was to:
+The objectives of the project were to:
 
-- develop a functional Flutter mobile application
-- implement Material 3 design principles
+- develop a functional mobile application using Flutter
+- implement Material 3 UI components
 - create reusable custom widgets
-- implement multi-page navigation
-- apply state management techniques
-- implement persistent data storage
+- implement navigation and state management
+- apply persistent local storage
 - demonstrate responsive and interactive UI design
-- apply Flutter widget composition and layout principles
 
 ---
 
-# Application Idea
+# Application Features
 
-Side Hustle Finder is a mobile application that helps users discover side hustle opportunities and interact with opportunity-related content.
-
-The application includes the following sections:
-
-- Categories
-- Posts
-- Opportunities
-- Favorites
-- Profile
-- Settings
-
-Users can browse opportunities, create posts, search for opportunities, and save favorite hustles.
-
----
-
-# Features
-
-## Core Features
-- Material 3 UI
-- Responsive mobile design
-- Light and dark theme support
-- Theme color switching
+- Material 3 design
+- Light and dark mode support
+- Dynamic theme color switching
 - Navigation drawer
 - Bottom NavigationBar
-- IndexedStack tab preservation
-- Reusable custom widgets
-
----
-
-## Category Section
-- Displays hustle categories
-- Custom category cards
-- Styled labels and badges
-- Image-based UI cards
-
----
-
-## Posts Section
-- View community-style posts
-- Add new posts dynamically
-- Interactive text input
-- Keyboard dismiss behavior when tapping outside input field
-
----
-
-## Opportunities Section
-- Opportunity cards with images
-- Search functionality
-- Favorite button functionality
-- Favorite animation effects
-- Opportunity details navigation
-
----
-
-## Favorites Section
-- Save favorite opportunities
-- Remove opportunities from favorites
+- IndexedStack navigation
+- Opportunity search functionality
+- Add post functionality
+- Favorite opportunities system
 - Persistent favorites storage
-- Favorites remain saved after app restart
+- Interactive UI animations
 
 ---
 
-## Settings Section
-- Theme switching
-- Multiple color theme options
-- Modern settings layout
+# Application Sections
 
----
+## Categories
+Displays different side hustle categories using reusable custom cards.
 
-## Profile Section
-- User profile UI
-- Email and phone display
-- Statistics cards
-- About section
+## Posts
+Allows users to view and add posts related to side hustle opportunities.
+
+## Opportunities
+Displays opportunity cards with:
+- images
+- descriptions
+- search functionality
+- favorite functionality
+
+## Favorites
+Displays saved favorite opportunities with persistent storage support.
+
+## Profile
+Displays user profile information and application statistics.
+
+## Settings
+Allows users to:
+- switch themes
+- change application colors
+- manage UI preferences
 
 ---
 
@@ -111,8 +73,8 @@ Users can browse opportunities, create posts, search for opportunities, and save
 - Flutter
 - Dart
 - Material 3
-- Provider (State Management)
-- Shared Preferences (Persistence)
+- Provider
+- Shared Preferences
 
 ---
 
@@ -120,20 +82,14 @@ Users can browse opportunities, create posts, search for opportunities, and save
 
 The application uses:
 
-- `setState()` for local widget updates
-- `Provider` for shared application state
-- `ChangeNotifier` for reactive UI updates
-
-The `AppProvider` manages:
-- favorite opportunities
-- favorite persistence
-- UI updates across screens
+- `setState()` for local state updates
+- `Provider` and `ChangeNotifier` for shared state management
 
 ---
 
 # Persistent Storage
 
-The application implements persistent local storage using:
+Persistent storage was implemented using:
 
 ```dart
 shared_preferences
