@@ -90,9 +90,7 @@ The application uses:
 ## Persistent Storage
 
 Persistent storage was implemented using:
-
-```dart
-shared_preferences
+ 
 
 
 ## Conclusion
