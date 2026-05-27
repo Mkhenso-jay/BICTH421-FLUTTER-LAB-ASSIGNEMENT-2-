@@ -9,30 +9,27 @@ class CategoryPage extends StatelessWidget {
     return ListView(
       children: const [
         CategoryCard(
-         imagePath: 'assets/images/freelance.png',
+          imagePath: 'assets/images/freelance.png',
           categoryName: 'Freelancing',
           categoryCount: '12 opportunities',
           topLabel: 'HOT',
           sideLabel: 'TRENDING',
         ),
-
         CategoryCard(
           imagePath: 'assets/images/reselling.png',
-           categoryName: 'Reselling', 
-           categoryCount: '8 opportunities', 
-           topLabel: 'NEW', 
-           sideLabel: 'POPULAR',
-           ),
-
-           CategoryCard(imagePath: 'assets/images/delivery.png',
-            categoryName: ' Delivery Services',
-            categoryCount: '5 Opportunities',
-            topLabel: 'EASY',
-            sideLabel: 'START NOW'
-            )
+          categoryName: 'Reselling',
+          categoryCount: '8 opportunities',
+          topLabel: 'NEW',
+          sideLabel: 'POPULAR',
+        ),
+        CategoryCard(
+          imagePath: 'assets/images/delivery.png',
+          categoryName: 'Delivery Services',
+          categoryCount: '5 opportunities',
+          topLabel: 'EASY',
+          sideLabel: 'START NOW',
+        ),
       ],
-
-
     );
   }
 }

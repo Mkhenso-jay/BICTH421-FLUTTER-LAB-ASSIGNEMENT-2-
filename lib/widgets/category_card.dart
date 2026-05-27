@@ -34,6 +34,7 @@ class CategoryCard extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
+
                   Positioned(
                     top: 12,
                     left: 12,
@@ -43,7 +44,7 @@ class CategoryCard extends StatelessWidget {
                         vertical: 6,
                       ),
                       decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.7),
+                        color: Colors.black.withValues(alpha: 0.7),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Text(
@@ -55,6 +56,7 @@ class CategoryCard extends StatelessWidget {
                       ),
                     ),
                   ),
+
                   Positioned(
                     right: -30,
                     top: 24,
@@ -79,6 +81,7 @@ class CategoryCard extends StatelessWidget {
                 ],
               ),
             ),
+
             ListTile(
               title: Text(categoryName),
               subtitle: Text(categoryCount),

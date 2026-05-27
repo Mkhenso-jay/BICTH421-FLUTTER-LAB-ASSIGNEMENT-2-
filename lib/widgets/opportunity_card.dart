@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../providers/app_provider.dart';
 
-class OpportunityCard extends StatefulWidget {
+class OpportunityCard extends StatelessWidget {
   final String imagePath;
   final String title;
   final String subtitle;
@@ -13,59 +15,47 @@ class OpportunityCard extends StatefulWidget {
   });
 
   @override
-  State<OpportunityCard> createState() => _OpportunityCardState();
-}
-
-class _OpportunityCardState extends State<OpportunityCard> {
-  bool _isFavorite = false;
-
-  void _toggleFavorite() {
-    setState(() {
-      _isFavorite = !_isFavorite;
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<AppProvider>(context);
+    final isFav = provider.isFavorite({
+      "image": imagePath,
+      "title": title,
+      "subtitle": subtitle,
+    });
+
     return Card(
-      margin: const EdgeInsets.all(16),
-      clipBehavior: Clip.antiAlias,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Stack(
-            children: [
-              ClipRRect(
-                child: AspectRatio(
-                  aspectRatio: 16 / 9,
-                  child: Image.asset(
-                    widget.imagePath,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-              Positioned(
-                top: 12,
-                right: 12,
-                child: CircleAvatar(
-                  backgroundColor: Colors.black54,
-                  child: IconButton(
-                    onPressed: _toggleFavorite,
-                    icon: Icon(
-                      _isFavorite ? Icons.favorite : Icons.favorite_border,
-                      color: _isFavorite ? Colors.red : Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-            ],
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      child: ListTile(
+        leading: Image.asset(
+          imagePath,
+          width: 50,
+          height: 50,
+          fit: BoxFit.cover,
+        ),
+
+        title: Text(title),
+        subtitle: Text(subtitle),
+
+        trailing: IconButton(
+          icon: Icon(
+            isFav ? Icons.favorite : Icons.favorite_border,
+            color: isFav ? Colors.red : Colors.grey,
           ),
-          ListTile(
-            title: Text(widget.title),
-            subtitle: Text(widget.subtitle),
-            trailing: const Icon(Icons.arrow_forward_ios),
-          ),
-        ],
+
+          onPressed: () {
+            final item = {
+              "image": imagePath,
+              "title": title,
+              "subtitle": subtitle,
+            };
+
+            if (isFav) {
+              provider.removeFavorite(item);
+            } else {
+              provider.addFavorite(item);
+            }
+          },
+        ),
       ),
     );
   }

@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'pages/home_page.dart';
+import 'providers/app_provider.dart';
 
 void main() {
-  runApp(const SideHustleFinderApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => AppProvider(),
+      child: const SideHustleFinderApp(),
+    ),
+  );
 }
 
 class SideHustleFinderApp extends StatefulWidget {
@@ -23,9 +31,9 @@ class _SideHustleFinderAppState extends State<SideHustleFinderApp> {
     });
   }
 
-  void _changeSeedColor(Color newColor) {
+  void _changeSeedColor(Color color) {
     setState(() {
-      _seedColor = newColor;
+      _seedColor = color;
     });
   }
 
@@ -34,23 +42,26 @@ class _SideHustleFinderAppState extends State<SideHustleFinderApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Side Hustle Finder',
+
       themeMode: _themeMode,
+
       theme: ThemeData(
         useMaterial3: true,
         colorSchemeSeed: _seedColor,
-        brightness: Brightness.light,
       ),
+
       darkTheme: ThemeData(
         useMaterial3: true,
         colorSchemeSeed: _seedColor,
         brightness: Brightness.dark,
       ),
-     home: HomePage(
-  themeMode: _themeMode,
-  seedColor: _seedColor,
-  onToggleTheme: _toggleTheme,
-  onChangeSeedColor: _changeSeedColor,
-),
+
+      home: HomePage(
+        themeMode: _themeMode,
+        seedColor: _seedColor,
+        onToggleTheme: _toggleTheme,
+        onChangeSeedColor: _changeSeedColor,
+      ),
     );
   }
 }
