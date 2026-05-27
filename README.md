@@ -10,7 +10,7 @@ The application demonstrates modern Flutter development practices including Mate
 
 ---
 
-# Objectives
+## Objectives
 
 The objectives of the project were to:
 
@@ -23,7 +23,7 @@ The objectives of the project were to:
 
 ---
 
-# Application Features
+## Application Features
 
 - Material 3 design
 - Light and dark mode support
@@ -39,28 +39,28 @@ The objectives of the project were to:
 
 ---
 
-# Application Sections
+## Application Sections
 
-## Categories
+### Categories
 Displays different side hustle categories using reusable custom cards.
 
-## Posts
+### Posts
 Allows users to view and add posts related to side hustle opportunities.
 
-## Opportunities
+### Opportunities
 Displays opportunity cards with:
 - images
 - descriptions
 - search functionality
 - favorite functionality
 
-## Favorites
+### Favorites
 Displays saved favorite opportunities with persistent storage support.
 
-## Profile
+### Profile
 Displays user profile information and application statistics.
 
-## Settings
+### Settings
 Allows users to:
 - switch themes
 - change application colors
@@ -68,7 +68,7 @@ Allows users to:
 
 ---
 
-# Technologies Used
+## Technologies Used
 
 - Flutter
 - Dart
@@ -78,7 +78,7 @@ Allows users to:
 
 ---
 
-# State Management
+## State Management
 
 The application uses:
 
@@ -87,9 +87,14 @@ The application uses:
 
 ---
 
-# Persistent Storage
+## Persistent Storage
 
 Persistent storage was implemented using:
 
 ```dart
 shared_preferences
+
+
+## Conclusion
+
+This project demonstrates the development of a structured and interactive Flutter mobile application using modern Flutter development practices. It successfully implements reusable widgets, navigation, state management, persistence, and responsive UI design. The application meets the requirements of Assignment 2 and Assignment 3 and provides a solid foundation for further enhancement and scalability.
